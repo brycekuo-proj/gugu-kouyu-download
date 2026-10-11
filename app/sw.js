@@ -1,6 +1,6 @@
 /* 咕咕英语口语 · 离线缓存
  * 页面：先联网取最新，断网时用缓存；录音和图标：先用缓存，没有再联网并存起来。 */
-const CACHE = 'gzky-1.0.0';
+const CACHE = 'gzky-1.1.0';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
