@@ -4,68 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>咕咕英语口语 · 下载</title>
-<meta name="description" content="广州版《英语（口语）》一、二年级同步跟读 App，安卓手机/平板下载安装">
+<meta name="description" content="广州版《英语（口语）》一、二年级同步跟读，安卓和 iPad 都能用">
+<link rel="apple-touch-icon" href="app/icon-180.png">
+<link rel="icon" href="app/icon-192.png">
 <style>
-:root{--bg:#E6F2EE;--card:#fff;--ink:#1D3445;--muted:#5D7585;--line:#CFE1DA;--coral:#FF6A45;--coral-d:#D24A27;--leaf:#1F9D66;--leaf-d:#147049;--sky:#2F7FE0}
+:root{--bg:#E6F2EE;--card:#fff;--ink:#1D3445;--muted:#5D7585;--line:#CFE1DA;--coral:#FF6A45;--leaf:#1F9D66;--leaf-d:#147049;--sky:#2F7FE0;--sky-d:#1F5FAF}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"PingFang SC","HarmonyOS Sans SC","MiSans","Microsoft YaHei",sans-serif}
-main{max-width:560px;margin:0 auto;padding:24px 16px 40px;display:grid;gap:16px}
+main{max-width:560px;margin:0 auto;padding:24px 16px 40px;display:flex;flex-direction:column;gap:16px}
 .card{background:var(--card);border-radius:22px;padding:20px;box-shadow:0 4px 0 var(--line)}
 .head{display:flex;gap:16px;align-items:center}
-.head svg{width:84px;height:84px;flex:none;border-radius:22px;background:var(--coral)}
+.head img{width:84px;height:84px;flex:none;border-radius:20px}
 h1{margin:0;font-size:26px;line-height:1.25}
 .sub{color:var(--muted);font-size:14px}
-.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.meta span{background:var(--bg);border-radius:999px;padding:2px 10px;font-size:13px;color:var(--muted)}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;border-radius:18px;background:var(--leaf);color:#fff;font-weight:800;font-size:20px;text-decoration:none;box-shadow:0 5px 0 var(--leaf-d)}
-.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--leaf-d)}
-.alt{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.alt a{display:block;text-align:center;padding:10px 6px;border-radius:14px;background:var(--bg);color:var(--ink);text-decoration:none;font-size:15px;font-weight:700}
+h2{margin:0 0 4px;font-size:20px;display:flex;align-items:center;gap:8px}
+h2 small{font-size:13px;font-weight:600;color:var(--muted)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;margin-top:12px;border-radius:18px;background:var(--leaf);color:#fff;font-weight:800;font-size:20px;text-decoration:none;box-shadow:0 5px 0 var(--leaf-d)}
+.btn.ios{background:var(--sky);box-shadow:0 5px 0 var(--sky-d)}
+.btn:active{transform:translateY(4px);box-shadow:none}
+.alt{display:block;text-align:center;margin-top:10px;padding:10px;border-radius:14px;background:var(--bg);color:var(--ink);text-decoration:none;font-size:15px;font-weight:700}
 .tip{font-size:13px;color:var(--muted);margin:10px 0 0}
-h2{margin:0 0 8px;font-size:18px}
-ol,ul{margin:0;padding-left:1.3em}
+ol{margin:10px 0 0;padding-left:1.3em}
 li{margin:4px 0}
-.feat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.share{display:inline-block;width:20px;height:20px;vertical-align:-4px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
 .feat div{background:var(--bg);border-radius:14px;padding:10px 12px}
 .feat b{display:block}
 .feat span{font-size:13px;color:var(--muted)}
-#wx{display:none;position:fixed;inset:0;background:rgba(15,25,35,.88);color:#fff;z-index:9;padding:20px;text-align:right}
+.mine{outline:3px solid var(--coral);outline-offset:-3px}
+.badge{display:none;font-size:12px;background:var(--coral);color:#fff;border-radius:999px;padding:1px 8px}
+.mine .badge{display:inline-block}
+#wx{display:none;position:fixed;inset:0;background:rgba(15,25,35,.9);color:#fff;z-index:9;padding:20px;text-align:right}
 #wx p{margin:56px 6px 0;text-align:left;font-size:20px;font-weight:700;line-height:1.6}
 #wx .arrow{font-size:56px;line-height:1;margin-right:6px}
 footer{text-align:center;color:var(--muted);font-size:12px}
 </style>
 </head>
 <body>
-<div id="wx"><div class="arrow">↗</div><p>微信里不能直接下载安装包<br>请点右上角「···」<br>选择「在浏览器打开」</p></div>
+<div id="wx"><div class="arrow">↗</div><p id="wxmsg">微信里不能直接下载安装<br>请点右上角「···」<br>选择「在浏览器打开」</p></div>
 <main>
   <section class="card head">
-    <svg viewBox="0 0 120 120" aria-hidden="true"><ellipse cx="60" cy="72" rx="38" ry="40" fill="#8B6A4E"/><ellipse cx="60" cy="83" rx="25" ry="25" fill="#F3DFC1"/><path d="M26 40 L36 20 L47 35Z M94 40 L84 20 L73 35Z" fill="#6E5139"/><circle cx="45" cy="57" r="15" fill="#fff"/><circle cx="75" cy="57" r="15" fill="#fff"/><circle cx="47" cy="58" r="7" fill="#1D3445"/><circle cx="73" cy="58" r="7" fill="#1D3445"/><circle cx="49" cy="55" r="2.3" fill="#fff"/><circle cx="75" cy="55" r="2.3" fill="#fff"/><path d="M55 68 L65 68 L60 77Z" fill="#FFC23C"/><circle cx="45" cy="57" r="17" fill="none" stroke="#1D3445" stroke-width="3"/><circle cx="75" cy="57" r="17" fill="none" stroke="#1D3445" stroke-width="3"/></svg>
+    <img src="app/icon-180.png" alt="">
     <div>
       <h1>咕咕英语口语</h1>
-      <div class="sub">广州版《英语（口语）》一、二年级 同步跟读</div>
-      <div class="meta"><span>安卓 7.0 以上</span><span>v1.0.0</span><span>7.6 MB</span><span>免费 · 无广告</span></div>
+      <div class="sub">广州版《英语（口语）》一、二年级 同步跟读<br>免费 · 无广告 · 安卓和 iPad 都能用</div>
     </div>
   </section>
 
-  <section class="card">
-    <a class="btn" id="dl" href="https://cdn.jsdelivr.net/gh/brycekuo-proj/gugu-kouyu-download@main/GuGuKouyu.apk">⬇ 下载安卓安装包</a>
-    <div class="alt">
-      <a href="https://fastly.jsdelivr.net/gh/brycekuo-proj/gugu-kouyu-download@main/GuGuKouyu.apk">备用线路 1</a>
-      <a href="https://gcore.jsdelivr.net/gh/brycekuo-proj/gugu-kouyu-download@main/GuGuKouyu.apk">备用线路 2</a>
-      <a href="https://testingcf.jsdelivr.net/gh/brycekuo-proj/gugu-kouyu-download@main/GuGuKouyu.apk">备用线路 3</a>
-      <a href="https://github.com/brycekuo-proj/gugu-kouyu-download/releases/latest/download/GuGuKouyu.apk">备用线路 4</a>
-    </div>
-    <p class="tip">主按钮下载慢或打不开时，换一个备用线路试试。只支持安卓手机和平板，苹果手机不能安装。</p>
-  </section>
-
-  <section class="card">
-    <h2>安装步骤</h2>
+  <section class="card" id="ipad">
+    <h2>📱 iPad / iPhone <small>网页版，不用安装</small><span class="badge">你的设备</span></h2>
+    <a class="btn ios" href="app/">打开咕咕英语口语</a>
     <ol>
-      <li>用手机自带浏览器打开本页（在微信里打开的，请先点右上角「···」→「在浏览器打开」）。</li>
-      <li>点上面的绿色按钮，下载完成后点「打开」或「安装」。</li>
-      <li>如果提示「禁止安装未知来源应用」，按提示允许浏览器安装一次即可。部分华为、小米手机会弹出“风险提示”，选「继续安装」。</li>
-      <li>第一次跟读时会询问麦克风权限，允许后可以听到孩子自己的录音；不允许也能正常学习。</li>
+      <li>用 <b>Safari 浏览器</b>打开本页，点上面的蓝色按钮。</li>
+      <li>点 Safari 的「分享」按钮 <svg class="share" viewBox="0 0 24 24" fill="none" stroke="#2F7FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M6 11v9h12v-9"/></svg>（iPad 在右上角，iPhone 在下方）。</li>
+      <li>选「<b>添加到主屏幕</b>」→「添加」。桌面上会出现咕咕老师的图标，以后从图标打开，全屏使用，像 App 一样。</li>
+      <li>第一次打开后，录音会自动存到 iPad 上（约 6 MB），之后不联网也能用。</li>
     </ol>
+    <p class="tip">进度保存在这台 iPad 上。请从桌面图标打开，不要从 Safari 打开，否则进度会分开记录。</p>
+  </section>
+
+  <section class="card" id="android">
+    <h2>🤖 安卓手机 / 平板 <small>安装版 · 7.6 MB</small><span class="badge">你的设备</span></h2>
+    <a class="btn" href="GuGuKouyu.apk" download>⬇ 下载安卓安装包</a>
+    <a class="alt" href="https://github.com/brycekuo-proj/gugu-kouyu-download/releases/latest/download/GuGuKouyu.apk">绿色按钮下载不了？试试备用线路</a>
+    <ol>
+      <li>用手机自带浏览器打开本页（微信里打开的，请先点右上角「···」→「在浏览器打开」）。</li>
+      <li>点绿色按钮，下载完成后点「安装」。</li>
+      <li>提示「未知来源」或「风险提示」时，选「允许」或「继续安装」（华为、小米、OPPO、vivo 都可能出现）。</li>
+      <li>第一次跟读时允许麦克风，可以听到孩子自己的录音；不允许也能正常学习。</li>
+    </ol>
+    <p class="tip">安卓 7.0 以上。也可以不安装，直接点上面的「打开咕咕英语口语」用网页版。</p>
   </section>
 
   <section class="card">
@@ -76,13 +84,20 @@ footer{text-align:center;color:var(--muted);font-size:12px}
       <div><b>单词句子</b><span>19 个主题 259 个单词 + 每日口语</span></div>
       <div><b>趣味游戏</b><span>气球听音、翻翻乐等 5 个游戏</span></div>
     </div>
-    <p class="tip">每句录音完整播完后才轮到孩子跟读，跟读时间结束才能进入下一句。所有录音已内置，不联网也能用。</p>
+    <p class="tip">每句录音完整播完后才轮到孩子跟读，跟读时间结束才能进入下一句。</p>
   </section>
 
   <footer>个人制作，供亲友免费使用 · 教材内容以孩子手上的课本为准</footer>
 </main>
 <script>
-if (/MicroMessenger|QQ\//i.test(navigator.userAgent)) {
+var ua = navigator.userAgent;
+var ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+var android = /Android/i.test(ua);
+var main = document.querySelector('main');
+if (ios) { document.getElementById('ipad').classList.add('mine'); }
+if (android) { var a = document.getElementById('android'); a.classList.add('mine'); main.insertBefore(a, document.getElementById('ipad')); }
+if (/MicroMessenger|QQ\//i.test(ua)) {
+  if (ios) document.getElementById('wxmsg').innerHTML = '请点右上角「···」<br>选择「在 Safari 中打开」<br>才能添加到主屏幕';
   document.getElementById('wx').style.display = 'block';
 }
 </script>
